@@ -1,3 +1,4 @@
+
 var finances = [
   ['Jan-2010', 867884],
   ['Feb-2010', 984655],
@@ -86,3 +87,40 @@ var finances = [
   ['Jan-2017', 138230],
   ['Feb-2017', 671099],
 ];
+
+var netProfitLoss=0
+var totalMonths
+var averageChanges
+var greatestIncrease
+var greatestDecrease
+
+// total months
+var totalMonths= finances.length
+console.log("Total Months:"+totalMonths)
+
+
+// console.log(finances[0][1])
+
+// total amount of profit loss
+for (let i = 0; i < finances.length; i++) {
+  const profitLoss = finances[i][1];
+  // console.log(finances[i][1]);
+  netProfitLoss= netProfitLoss+profitLoss
+  // netProfitLoss+=profitLoss
+  if (index>0) {
+    // here we need to subtract the previous amount in array
+    //Skip the first index. Subtract index 2 from index 1
+    var averageChanges=finances[i][1]
+  }
+}
+console.log("Total Profit/Loss:"+netProfitLoss)
+
+
+
+
+
+
+
+
+
+// new array with the changes in it?
