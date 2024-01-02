@@ -1,5 +1,7 @@
 https://nicosharpe.github.io/console-finances/
 
+<img src="./images/Screenshot 2024-01-02 215341.png">
+
 # Unit 4 Challenge: Console Finances
 
 ## Overview
