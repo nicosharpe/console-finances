@@ -1,5 +1,4 @@
-
-var finances = [
+const finances = [
   ['Jan-2010', 867884],
   ['Feb-2010', 984655],
   ['Mar-2010', 322013],
@@ -91,15 +90,15 @@ var finances = [
 var netProfitLoss=0
 var totalMonths
 var averageChanges
-var greatestIncrease
-var greatestDecrease
+
+console.log("Financial Analysis")
+console.log("------------------")
+
 
 // total months
 var totalMonths= finances.length
 console.log("Total Months:"+totalMonths)
 
-
-// console.log(finances[0][1])
 
 // total amount of profit loss
 for (let i = 0; i < finances.length; i++) {
@@ -107,20 +106,49 @@ for (let i = 0; i < finances.length; i++) {
   // console.log(finances[i][1]);
   netProfitLoss= netProfitLoss+profitLoss
   // netProfitLoss+=profitLoss
-  if (index>0) {
+  if (i>0) {
     // here we need to subtract the previous amount in array
     //Skip the first index. Subtract index 2 from index 1
     var averageChanges=finances[i][1]
+    
+  }
+  
+}
+
+console.log("Total: £"+netProfitLoss)
+
+console.log("Average Change: "+averageChanges);
+
+
+
+let highestIncrease = 0;
+let highestIncreaseDate = '';
+
+for (let i = 1; i < finances.length; i++) {
+  const currentProfit = finances[i][1];
+  const previousProfit = finances[i - 1][1];
+  const increase = currentProfit - previousProfit;
+
+  if (increase > highestIncrease) {
+    highestIncrease = increase;
+    highestIncreaseDate = finances[i][0];
   }
 }
-console.log("Total Profit/Loss:"+netProfitLoss)
 
+console.log("The highest increase in profits is £" +(highestIncrease)+" on "+(highestIncreaseDate));
 
+let highestDecrease = 0;
+let highestDecreaseDate = '';
 
+for (let i = 1; i < finances.length; i++) {
+  const currentProfit = finances[i][1];
+  const previousProfit = finances[i - 1][1];
+  const decrease = previousProfit - currentProfit;
 
+  if (decrease > highestDecrease) {
+    highestDecrease = decrease;
+    highestDecreaseDate = finances[i][0];
+  }
+}
 
-
-
-
-
-// new array with the changes in it?
+console.log("The highest decrease in profits is £"+(highestDecrease)+" on "+(highestDecreaseDate));
